@@ -6,5 +6,6 @@
     gh        # GitHub CLI
     claude-code
     github-copilot-cli
+    zed-editor
   ];
 }
