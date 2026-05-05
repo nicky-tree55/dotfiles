@@ -9,13 +9,13 @@
 
       userSettings = {
         "editor.formatOnSave" = true;
-        "editor.fontSize" = 14;
+        "editor.fontSize" = 12;
         "editor.tabSize" = 2;
         "editor.rulers" = [ 80 120 ];
         "editor.minimap.enabled" = false;
         "files.trimTrailingWhitespace" = true;
         "files.insertFinalNewline" = true;
-        "terminal.integrated.fontSize" = 13;
+        "terminal.integrated.fontSize" = 12;
         "workbench.colorTheme" = "Default Dark Modern";
       };
     };
