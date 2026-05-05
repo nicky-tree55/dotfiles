@@ -1,4 +1,11 @@
 { pkgs, username, homeDirectory, gitName, gitEmail, ... }: {
+  imports = [
+    ./modules/home/git.nix
+    ./modules/home/zsh.nix
+    ./modules/home/vscode.nix
+    ./modules/home/zed.nix
+  ];
+
   home.username = username;
   home.homeDirectory = homeDirectory;
 

@@ -1,7 +1,6 @@
 { pkgs, ... }: {
   imports = [
     ./modules/darwin/packages.nix
-    ./modules/darwin/homebrew.nix
   ];
 
   # nix-darwin のバージョン管理に必須
@@ -9,6 +8,9 @@
 
   # nixpkgs のホストプラットフォーム指定
   nixpkgs.hostPlatform = "aarch64-darwin";
+
+  # unfree パッケージ（VSCode 等）を許可
+  nixpkgs.config.allowUnfree = true;
 
   # Determinate Nix を使用しているため nix-darwin の Nix 管理を無効化
   nix.enable = false;
