@@ -17,6 +17,7 @@
         "files.insertFinalNewline" = true;
         "terminal.integrated.fontSize" = 12;
         "workbench.colorTheme" = "Default Dark Modern";
+        "workbench.startupEditor" = "none";
       };
     };
   };
