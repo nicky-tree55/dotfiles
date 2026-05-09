@@ -6,10 +6,11 @@
     userSettings = {
       theme = "Ayu Dark";
       git_status = true;
-      ui_font_size = 16;
-      buffer_font_size = 15;
+      ui_font_size = 15;
+      buffer_font_size = 13;
       buffer_font_family = "GeistMono Nerd Font";
       buffer_font_weight = 400;
+      buffer_font_features = { calt = false; };
       buffer_line_height = "comfortable";
       format_on_save = "on";
       tab_size = 2;
@@ -18,7 +19,7 @@
 
       terminal = {
         font_family = "GeistMono Nerd Font";
-        font_size = 13;
+        font_size = 12;
       };
     };
   };
