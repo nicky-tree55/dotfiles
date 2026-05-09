@@ -8,7 +8,7 @@
       git_status = true;
       ui_font_size = 16;
       buffer_font_size = 15;
-      buffer_font_family = ".ZedMono";
+      buffer_font_family = "GeistMono Nerd Font";
       buffer_font_weight = 400;
       buffer_line_height = "comfortable";
       format_on_save = "on";
@@ -17,7 +17,7 @@
       vim_mode = false;
 
       terminal = {
-        font_family = ".ZedMono";
+        font_family = "GeistMono Nerd Font";
         font_size = 13;
       };
     };

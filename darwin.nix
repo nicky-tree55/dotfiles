@@ -1,5 +1,6 @@
 { pkgs, ... }: {
   imports = [
+    ./modules/darwin/fonts.nix
     ./modules/darwin/packages.nix
   ];
 
