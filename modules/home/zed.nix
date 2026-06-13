@@ -1,11 +1,8 @@
 { pkgs, nix-claude-code, ... }: {
 
-  nixpkgs.config.allowUnfreePredicate = pkg:
-    builtins.elem (pkgs.lib.getName pkg) [ "claude" ];
-
   home.packages = [
     # claude-codeはghも同梱されたデフォルト版を使う
-    nix-claude-code.packages.${pkgs.system}.default
+    nix-claude-code.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   programs.zed-editor = {
