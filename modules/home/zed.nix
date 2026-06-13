@@ -1,4 +1,13 @@
-{ pkgs, ... }: {
+{ pkgs, nix-claude-code, ... }: {
+
+  nixpkgs.config.allowUnfreePredicate = pkg:
+    builtins.elem (pkgs.lib.getName pkg) [ "claude" ];
+
+  home.packages = [
+    # claude-codeはghも同梱されたデフォルト版を使う
+    nix-claude-code.packages.${pkgs.system}.default
+  ];
+
   programs.zed-editor = {
     enable = true;
     extensions = [ "nix" ];
@@ -20,6 +29,10 @@
       terminal = {
         font_family = "GeistMono Nerd Font";
         font_size = 12;
+        shell = {
+          program = "/bin/zsh";
+          args = [ "-l" ];
+        };
       };
     };
   };

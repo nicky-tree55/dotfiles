@@ -1,6 +1,12 @@
 {
   description = "nt's macOS configuration";
 
+  # Cachixバイナリキャッシュを使うと初回ビルドが大幅に速くなる
+  nixConfig = {
+    extra-substituters = [ "https://ryoppippi.cachix.org" ];
+    extra-trusted-public-keys = [ "ryoppippi.cachix.org-1:b2LbtWNvJeL/qb1B6TYOMK+apaCps4SCbzlPRfSQIms=" ];
+  };
+
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin = {
@@ -11,9 +17,10 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    nix-claude-code.url = "github:ryoppippi/nix-claude-code";
   };
 
-  outputs = { self, nixpkgs, nix-darwin, home-manager }:
+  outputs = { self, nixpkgs, nix-darwin, home-manager, nix-claude-code }:
   let
     username = "nt";
     homeDirectory = "/Users/${username}";
@@ -21,7 +28,6 @@
     gitEmail = "68451176+nicky-tree55@users.noreply.github.com";
   in {
     darwinConfigurations."personal" = nix-darwin.lib.darwinSystem {
-
       system = "aarch64-darwin";
       modules = [
         ./darwin.nix
@@ -30,7 +36,9 @@
           home-manager.useGlobalPkgs = true;
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
-          home-manager.extraSpecialArgs = { inherit username homeDirectory gitName gitEmail; };
+          home-manager.extraSpecialArgs = {
+            inherit username homeDirectory gitName gitEmail nix-claude-code;
+          };
           home-manager.users.${username} = import ./home.nix;
         }
       ];
