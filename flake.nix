@@ -1,12 +1,6 @@
 {
   description = "nt's macOS configuration";
 
-  # Cachixバイナリキャッシュを使うと初回ビルドが大幅に速くなる
-  nixConfig = {
-    extra-substituters = [ "https://ryoppippi.cachix.org" ];
-    extra-trusted-public-keys = [ "ryoppippi.cachix.org-1:b2LbtWNvJeL/qb1B6TYOMK+apaCps4SCbzlPRfSQIms=" ];
-  };
-
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
     nix-darwin = {
