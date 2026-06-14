@@ -51,6 +51,10 @@ darwin-rebuild switch --flake .#personal
 設定を変更した後は同じコマンドで適用する。
 
 ```sh
+nix flake update
+```
+
+```sh
 darwin-rebuild switch --flake .#personal
 ```
 
